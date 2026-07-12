@@ -1,3 +1,7 @@
+output "spring_cloud_accelerators_id" {
+  description = "Map of id values across all spring_cloud_accelerators, keyed the same as var.spring_cloud_accelerators"
+  value       = { for k, v in azurerm_spring_cloud_accelerator.spring_cloud_accelerators : k => v.id }
+}
 output "spring_cloud_accelerators_name" {
   description = "Map of name values across all spring_cloud_accelerators, keyed the same as var.spring_cloud_accelerators"
   value       = { for k, v in azurerm_spring_cloud_accelerator.spring_cloud_accelerators : k => v.name }
